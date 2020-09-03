@@ -1,0 +1,9 @@
+<p>current user {{socketService.currentUser}}</p>
+
+<video #localVideo></video><br/>
+<ng-container *ngFor="let u of socketService.users">
+    <button *ngIf="u !== socketService.currentUser" (click)="call(u)">call {{u}}</button>
+    <br/>
+</ng-container>
+
+<video #remoteVideo></video>
